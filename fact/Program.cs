@@ -6,7 +6,20 @@ namespace fact
     {
         static void Main(string[] args)
         {
-            Factorial();
+            while (true)
+            {
+                Console.WriteLine("Введите порядковый номер числа");
+                int input = Convert.ToInt32(Console.ReadLine());
+                int result = Fibo(input);
+                Console.WriteLine(result);
+            }
+        }
+        static int Fibo(int a)
+        {
+            if (a <= 1)
+            { return 1; }
+            int fiboResult = Fibo(a - 1)+ Fibo(a-2);
+            return fiboResult;
         }
 
         static void Factorial()
