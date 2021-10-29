@@ -6,14 +6,31 @@ namespace fact
     {
         static void Main(string[] args)
         {
+            Factorial();
+        }
 
+        static void Factorial()
+        {
+            Console.WriteLine("введите неотрицательное число");
             int a = Convert.ToInt32(Console.ReadLine());
             int b = 1;
-            for (int i = 1; a >= i; i++)
+            if (a < 0)
             {
-                b = b * i;
+                Console.WriteLine("введено отрицательное число");
             }
-            Console.WriteLine(b);
+            else if (a % 1 != 0)
+            {
+                Console.WriteLine("введено дробное число");
+            }
+            else
+            {
+                for (int i = 1; i <= a; i++)
+                {
+                    b *= i;
+                }
+                Console.WriteLine(b);
+            }
+            Console.ReadKey();
         }
     }
 }
