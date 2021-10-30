@@ -13,10 +13,14 @@ namespace fact
                 int resultFact = Factorial(input);
                 int resultFibo = Fibo(input);
                 int resultFactRec = FactorialRecursive(input);
-                Console.WriteLine("Результат Фаакториала: "+ resultFact);
-                Console.WriteLine("Результат Фибоначи: " + resultFibo);
-                Console.WriteLine("Результат рекурсивного Фаакториала: " + resultFactRec);
-
+                int[] result = new int[3];
+                result[0] = resultFact;
+                result[1] = resultFibo;
+                result[2] = resultFactRec;
+                //int[] result = new int { resultFact, resultFibo, resultFactRec }
+                Console.WriteLine("Результат Фаакториала: "+ result[0]);
+                Console.WriteLine("Результат Фибоначи: " + result[1]);
+                Console.WriteLine("Результат рекурсивного Фаакториала: " + result[2]);
             }
         }
         static int Fibo(int a)
