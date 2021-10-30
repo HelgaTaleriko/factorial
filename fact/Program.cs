@@ -8,6 +8,7 @@ namespace fact
         {
             while (true)
             {
+                Calculator calc1 = new Calculator();
                 Console.WriteLine("введите неотрицательное число");
                 int input = Convert.ToInt32(Console.ReadLine());
                 int resultFact = Factorial(input);
