@@ -8,42 +8,56 @@ namespace fact
         {
             while (true)
             {
-                Console.WriteLine("Введите порядковый номер числа");
+                Console.WriteLine("введите неотрицательное число");
                 int input = Convert.ToInt32(Console.ReadLine());
-                int result = Fibo(input);
-                Console.WriteLine(result);
+                int resultFact = Factorial(input);
+                int resultFibo = Fibo(input);
+                int resultFactRec = FactorialRecursive(input);
+                Console.WriteLine("Результат Фаакториала: "+ resultFact);
+                Console.WriteLine("Результат Фибоначи: " + resultFibo);
+                Console.WriteLine("Результат рекурсивного Фаакториала: " + resultFactRec);
+
             }
         }
         static int Fibo(int a)
         {
             if (a <= 1)
             { return 1; }
-            int fiboResult = Fibo(a - 1)+ Fibo(a-2);
+            int fiboResult = Fibo(a - 1) + Fibo(a - 2);
             return fiboResult;
         }
 
-        static void Factorial()
+        static int Factorial(int a)
         {
-            Console.WriteLine("введите неотрицательное число");
-            int a = Convert.ToInt32(Console.ReadLine());
             int b = 1;
             if (a < 0)
             {
-                Console.WriteLine("введено отрицательное число");
+                throw new Exception("введено отрицательное число");
             }
             else if (a % 1 != 0)
             {
-                Console.WriteLine("введено дробное число");
+                throw new Exception("введено дробное число");
             }
-            else
+            for (int i = 1; i <= a; i++)
             {
-                for (int i = 1; i <= a; i++)
-                {
-                    b *= i;
-                }
-                Console.WriteLine(b);
+                b *= i;
             }
-            Console.ReadKey();
+            return b;
+        }
+        static int FactorialRecursive(int a)
+        {
+            if (a < 0)
+            {
+                throw new Exception("введено отрицательное число");
+            }
+            else if (a % 1 != 0)
+            {
+                throw new Exception("введено дробное число");
+            }
+            if (a <= 1)
+            { return 1; }
+            int result = a * FactorialRecursive(a - 1);
+            return result;
         }
     }
 }
