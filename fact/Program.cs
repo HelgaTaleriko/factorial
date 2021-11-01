@@ -9,8 +9,9 @@ namespace fact
             while (true)
             {
                 Calculator calc1 = new Calculator();
-                Console.WriteLine("введите неотрицательное число");
-                int input = Convert.ToInt32(Console.ReadLine());
+
+                // Добавить указание инпута в экземпляр 
+
                 int resultFact = calc1.Factorial(input);
                 int resultFibo = calc1.Fibo(input);
                 int resultFactRec = calc1.FactorialRecursive(input);

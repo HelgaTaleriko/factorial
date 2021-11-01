@@ -6,9 +6,15 @@ namespace fact
 {
     class Calculator
     {
-        public int Fibo(int a)
+        public int input()
         {
-            if (a <= 1)
+            Console.WriteLine("введите неотрицательное число");
+            input = Convert.ToInt32(Console.ReadLine());
+        }// добавить поле инпут
+
+        public int Fibo(int a) // тут брать из this 
+        {
+            if (a <= 1) 
             { return 1; }
             int fiboResult = Fibo(a - 1) + Fibo(a - 2);
             return fiboResult;
