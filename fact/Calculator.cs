@@ -1,26 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace fact
 {
     class Calculator
     {
-        public int input()
-        {
-            Console.WriteLine("введите неотрицательное число");
-            input = Convert.ToInt32(Console.ReadLine());
-        }// добавить поле инпут
+        public int Input;
+        int Input1 = Convert.ToInt32(Console.ReadLine());
+
+        // добавить поле инпут
 
         public int Fibo(int a) // тут брать из this 
         {
-            if (a <= 1) 
+            if (a <= 1)
             { return 1; }
             int fiboResult = Fibo(a - 1) + Fibo(a - 2);
             return fiboResult;
         }
 
-        public  int Factorial(int a)
+        public int Factorial(int a)
         {
             int b = 1;
             if (a < 0)
